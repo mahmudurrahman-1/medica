@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-weight: 400;
+  line-height: 1rem;
+  text-rendering: optimizeLegibility;
+  color: #000;
+  height: 100vh;
+  overflow: scroll;
+  background: -webkit-linear-gradient(left, #87befc, #85c4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-view{
+    height: 90%;
+    width: 80%;
+    background-color: rgb(225, 245, 248);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1rem 2rem 1.5rem rgb(59 148 251 / 45%);
+
+}
+
+
+.mobile-header{
+    height: 15%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mobile__username{
+    font-size: 4rem;
+}
+.mobile__top-button{
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+    height: 6rem;
+    width: 6rem;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: -0.5rem 0.5rem 1.5rem rgb(255, 255, 255,0.45);
+
+}
+.mobile-body{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow-y: scroll;
+}
+
+.mobile-body-briefCase{
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%; 
+    background: rgb(255, 255, 254);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -0.5rem 1rem 4rem #0e02021c;
+    shape-outside: circle(50%);
+}
+
+.body-briefCase{
+    
+    fill: rgb(63, 139, 252);
+    height: 8rem;
+    width: auto;
+
+}
+
+.body-button{
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 10rem;
+    background-color: rgb(63, 139, 252);
+    border:1px solid #fff;
+}
+.body-button:hover{
+    background-color: rgb(34, 122, 255);
+ transition: .1s;
+}
+
+.body-paragraph-1{
+    font-size: 1.6rem;
+    font-weight: 300;
+
+}
+.body-paragraph-2{
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+
+
+.mobile-footer{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+
+    /* background-color: #; */
+}
+.settings{
+height: 8rem;
+width: 15rem;
+border-radius: 50%;
+z-index: 100;
+background:none;
+border: none;
+}
+.settings-icon{
+    height: 5rem;
+    width: 5rem;
+    z-index: 1000;
+    fill: rgba(145, 145, 145, 0.541);
+}
+.settings-icon:active{
+    fill: rgb(145, 145, 145);
+
+}
+.settings-icon-user {
+    fill: rgb(63, 139, 252);
+
+}
