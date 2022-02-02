@@ -29,10 +29,10 @@
             <div class="form-inner">
                <form action="#" class="login">
                   <div class="field">
-                     <input type="email" onchange="validateLogin()" name="enterEmail" class="login-Email" placeholder="Email Address" required>
+                     <input type="email" oninput="validateLogin(this)" name="enterEmail" class="login-Email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input type="password" onchange="validateLogin()" name="enterPassword" class="login-Password" placeholder="Password" required>
+                     <input type="password" oninput="validateLogin(this)" name="enterPassword" class="login-Password" placeholder="Password" required>
                   </div>
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
@@ -50,10 +50,10 @@
                      <input type="email"  name="email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input onchange='checkPass()' class="re-pass" type="password" name="password" placeholder="password" required>
+                     <input oninput='checkPass(this)' class="re-pass" type="password" name="password" placeholder="password" required>
                   </div>
                   <div class="field">
-                     <input onchange='checkPass()' class="re-passc" type="password" name="passwordConfirm" placeholder="confirm password" required>
+                     <input oninput='checkPass(this)' class="re-passc" type="password" name="passwordConfirm" placeholder="confirm password" required>
                   </div>
                   <div class="field btn">
                      <button id="submit-to-signup" class="submit-to-signup" type="submit"  disabled>Signup</button>

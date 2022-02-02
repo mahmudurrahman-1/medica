@@ -35,8 +35,9 @@ labelFormSignUp.addEventListener('submit', event => {
       Id: Math.trunc(Math.random()*10000 +1),
 
     }
- localStorage.setItem('myInfo',JSON.stringify(Datas,'\t',2));
  Datas.push(data);
+ localStorage.setItem('myInfo',JSON.stringify(Datas,'\t',2));
+
 });
 const output= localStorage.getItem("myInfo");
 /* json to js object */
@@ -50,7 +51,9 @@ const loginSubmit = document.getElementById("submit-to-login");
 
 // validate login button
 
-const validateLogin=()=>{
+const validateLogin=(e)=>{
+    console.log(e.value);
+
     if(enterEmail.value.includes("@") && enterPassword.value.trim().length > 4 ){
         return loginSubmit.disabled = false;
     }
@@ -105,7 +108,8 @@ const RegistrationPass2=document.querySelector(".re-passc");
 const signupSubmit = document.getElementById("submit-to-signup");
 
 
-const checkPass=()=>{
+const checkPass=(e)=>{
+    console.log(e.value);
 if(Number(RegistrationPass1.value)===Number(RegistrationPass2.value)){
     return signupSubmit.disabled=false;
 }
