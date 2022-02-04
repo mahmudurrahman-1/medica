@@ -29,10 +29,10 @@
             <div class="form-inner">
                <form action="#" class="login">
                   <div class="field">
-                     <input type="email" oninput="validateLogin(this)" name="enterEmail" class="login-Email" placeholder="Email Address" required>
+                     <input type="email" oninput="validateLogin(this)" name="enterEmail" id="login-Email" class="login-Email" placeholder="Enter email" required>
                   </div>
                   <div class="field">
-                     <input type="password" oninput="validateLogin(this)" name="enterPassword" class="login-Password" placeholder="Password" required>
+                     <input type="password" oninput="validateLogin(this)" name="enterPassword" id="login-Password" class="login-Password" placeholder="Enter Password" required>
                   </div>
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
@@ -47,13 +47,16 @@
 
                <form class="signup form__signup">
                   <div class="field">
-                     <input type="email"  name="email" placeholder="Email Address" required>
+                     <input type="text"  id="signupName" name="name" placeholder="Full Name" required>
                   </div>
                   <div class="field">
-                     <input oninput='checkPass(this)' class="re-pass" type="password" name="password" placeholder="password" required>
+                     <input type="email"  id="signupEmail" name="email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input oninput='checkPass(this)' class="re-passc" type="password" name="passwordConfirm" placeholder="confirm password" required>
+                     <input oninput='checkPass(this)' id="signupPassword" class="re-pass" type="password" name="password" placeholder="password" required>
+                  </div>
+                  <div class="field">
+                     <input oninput='checkPass(this)' id="signuprePassword" class="re-passc" type="password" name="passwordConfirm" placeholder="confirm password" required>
                   </div>
                   <div class="field btn">
                      <button id="submit-to-signup" class="submit-to-signup" type="submit"  disabled>Signup</button>

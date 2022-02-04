@@ -10,12 +10,18 @@ signupBtn.onclick = (() => {
 loginBtn.onclick = (() => {
     loginForm.style.marginLeft = "0%";
     loginText.style.marginLeft = "0%";
+    
 });
 signupLink.onclick = (() => {
     signupBtn.click();
     return false;
 });
+
 /********* */
+const signUpEmail=document.getElementById("signupEmail");
+const signUpPassword=document.getElementById("signupPassword");
+const signUprePassword=document.getElementById("signuprePassword");
+//---------------
 const password = document.querySelector(".re-pass").value;
 const password1 = document.querySelector(".re-passc").value;
 
@@ -36,18 +42,24 @@ labelFormSignUp.addEventListener('submit', event => {
 
     }
  Datas.push(data);
+ signUpEmail.value=signUpPassword.value=signUprePassword.value="";
+ signUprePassword.blur();
  localStorage.setItem('myInfo',JSON.stringify(Datas,'\t',2));
 
-});
-const output= localStorage.getItem("myInfo");
-/* json to js object */
+ alert("registration successfull");
 
-const Profile =JSON.parse(output);
-console.log(Profile); 
+});
+// const output= localStorage.getItem("myInfo");
+// /* json to js object */
+
+// const Profile =JSON.parse(output);
+// console.log(Profile); 
 /********************Login in user */
 const enterEmail =document.querySelector(".login-Email");
 const enterPassword =document.querySelector(".login-Password");
 const loginSubmit = document.getElementById("submit-to-login");
+const enterEmailId =document.getElementById(".login-Email");
+const enterPasswordId =document.getElementById(".login-Password");
 
 // validate login button
 
@@ -66,15 +78,18 @@ const validateLogin=(e)=>{
 // start login successfully
 loginSubmit.addEventListener('click',event=>{
     event.preventDefault();
-    Profile.map((information,i)=>{
-        if(enterEmail.value===information.Email && Number(enterPassword.value)===Number(information.Password)){
-            console.log("login successfull");
-            window.location.replace("./assets/UI/upload.html");
-           localStorage.setItem("ui", "1");
+    const output= localStorage.getItem("myInfo");
+    /* json to js object */  
+    const Profile =JSON.parse(output);
+    Profile.map((information)=>{
+        if(enterEmail.value===information.Email && enterPassword.value===information.Password){
+        alert("login successfull");
+        window.location.replace("./assets/UI/upload.html");
+        localStorage.setItem("ui", "1");
         }
         else
         {
-        console.log('failed');
+        alert("login failed");
 
         }
     });
@@ -108,12 +123,20 @@ const RegistrationPass2=document.querySelector(".re-passc");
 const signupSubmit = document.getElementById("submit-to-signup");
 
 
+
 const checkPass=(e)=>{
     console.log(e.value);
-if(Number(RegistrationPass1.value)===Number(RegistrationPass2.value)){
+if(RegistrationPass1.value===RegistrationPass2.value){
     return signupSubmit.disabled=false;
 }
 else{
     return signupSubmit.disabled=true;
 }
-}
+};
+// const bluring=()=>{
+//     signUpEmail.value="";
+//     signUpPassword.value="";
+//     signUprePassword.value="";
+// };
+
+/**********button2,3,4,5 */
