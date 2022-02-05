@@ -152,6 +152,7 @@ border: none;
 
 
 /***********body-list*/
+
 .mobile-body-list{
     height: 65%;
     width: 100%;
@@ -226,4 +227,49 @@ margin-bottom: 1rem;
 .body-text-edit:hover{
     background-color: rgb(34, 122, 255);
      transition: .1s;
+}
+.mobile-body-main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.body-input-Head{
+    font-size: 3rem;
+    flex: 0 0 20%;
+}
+.body-form{
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.body-input{
+width: 50rem;
+height: 10rem;
+margin-bottom: 2rem;
+padding: 1rem 1.5rem;
+font-size: 2rem;
+font-weight: 500;
+word-spacing: 0.2rem;
+}
+.body-input-title{
+word-spacing: 0.2rem;
+width: 50rem;
+height: 5rem;
+font-weight: 600;
+margin-bottom: 2rem;
+padding: 1rem 1.5rem;
+font-size: 2rem;
+}
+#output-button{
+    flex: 0 0 20%;
+ 
+}
+.body-input::-webkit-input-placeholder{
+    font-size:2rem;
+    color:#666;
 }

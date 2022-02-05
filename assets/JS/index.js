@@ -18,9 +18,11 @@ signupLink.onclick = (() => {
 });
 
 /********* */
+const signUpName=document.getElementById("signupName");
 const signUpEmail=document.getElementById("signupEmail");
 const signUpPassword=document.getElementById("signupPassword");
 const signUprePassword=document.getElementById("signuprePassword");
+
 //---------------
 const password = document.querySelector(".re-pass").value;
 const password1 = document.querySelector(".re-passc").value;
@@ -35,14 +37,15 @@ labelFormSignUp.addEventListener('submit', event => {
     const information = new FormData(event.target);
     const dataExtracted = Object.fromEntries(information.entries());
     let data={
+      Name:dataExtracted.name,
       Email : dataExtracted.email,
       Password:dataExtracted.password,
       Repassword:dataExtracted.passwordConfirm,
-      Id: Math.trunc(Math.random()*10000 +1),
+      Id: Math.trunc(Math.random()*10 +1),
 
     }
  Datas.push(data);
- signUpEmail.value=signUpPassword.value=signUprePassword.value="";
+ signUpName.value=signUpEmail.value=signUpPassword.value=signUprePassword.value="";
  signUprePassword.blur();
  localStorage.setItem('myInfo',JSON.stringify(Datas,'\t',2));
 
