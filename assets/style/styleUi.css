@@ -132,10 +132,10 @@ body {
   height: 5rem;
   width: 5rem;
   z-index: 1000;
-  fill: rgba(145, 145, 145, 0.541);
+  fill: #777;
 }
 .settings-icon:active {
-  fill: rgb(145, 145, 145);
+  fill: rgb(199, 199, 199);
 }
 .settings-icon-user {
   fill: rgb(63, 139, 252);
