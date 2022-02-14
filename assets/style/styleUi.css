@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 1rem 2rem 1.5rem rgb(59 148 251 / 45%);
+  box-shadow: -1rem -2rem 1.5rem rgb(59 148 251 / 45%);
 }
 
 .mobile-header {
@@ -123,9 +123,6 @@ body {
   /* background-color: #; */
 }
 .settings {
-  padding: 1rem 2rem;
-  border-radius: 50%;
-  border: 1px solid transparent;
   outline: none;
 }
 .settings:active {
@@ -253,11 +250,25 @@ button.btn.btn-primary {
 .body-input {
   height: 10rem !important;
 }
+@media screen and (max-width: 800px) {
+  .media {
+    padding: 3rem;
+  }
+  .mobile-view {
+    width: 90%;
+  }
+}
 
 @media screen and (max-width: 520px) {
   .form-control {
     width: 25rem !important;
     margin-bottom: 1rem;
     font-size: 1.6rem !important;
+  }
+  .media {
+    padding: 2rem;
+  }
+  .mobile-view {
+    width: 100%;
   }
 }
