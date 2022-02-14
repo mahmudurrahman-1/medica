@@ -1,65 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Medica</title>
-    <link rel="stylesheet" type="text/css" href="../style/styleUi.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<body>
+    <link rel="stylesheet" type="text/css" href="../style/styleUi.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
     <div class="mobile-view">
-        <div class="mobile-header">
-            <p class="mobile__username">Abdur Rahman</p>
-            <button class="mobile__top-button">...</button>
+      <div class="mobile-header">
+        <p class="mobile__username">Abdur Rahman</p>
+        <button class="mobile__top-button">...</button>
+      </div>
+
+      <div class="mobile-body">
+        <div class="div-1 div">
+          <p class="body-paragraph-2">Welcome to The Medicine App</p>
+
+          <div class="mobile-body-briefCase">
+            <svg class="body-briefCase">
+              <use xlink:href="icons/sprite.svg#icon-aid-kit"></use>
+            </svg>
+          </div>
+          <button onclick="currentSlide(2)" class="btn btn-primary mt-2">
+            &plus; Save Things
+          </button>
+          <p class="body-paragraph-1">
+            Lorem ipsum dolor. deleniti quas distinctio!
+          </p>
+          <p class="body-paragraph-2">lorem ipsum</p>
         </div>
-        
-        <div class="mobile-body">
-            <div class="mobile-body-main">
-                <label for="textinput" class="body-input-Head">Enter your notes</label>
-                 <form class="body-form">
-                    <input name="title" type="text" class="body-input-title" placeholder="title here......." required />
-                    <textarea name="textinput" type="text" class="body-input" placeholder="Write here......." required></textarea>
-                   <button type="submit" id="output-button" class="body-button">Enter your text</button>
-                 </form>
-                 </div>
+        <div class="div-2 div">
+          <div class="mobile-body-main">
+            <label for="textinput" class="body-input-Head"
+              >Enter your notes</label
+            >
+            <form class="body-form">
+              <input
+                name="title"
+                type="text"
+                oninput="validEnter(this)"
+                class="body-input-title form-control"
+                id="exampleFormControlInput1"
+                placeholder="title here......."
+                required
+              />
+              <textarea
+                name="textinput"
+                type="text"
+                oninput="validEnter(this)"
+                class="body-input form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="Write here......."
+                required
+              ></textarea>
+              <button
+                onclick="todoAPp()"
+                id="output-button"
+                class="btn btn-primary mt-2"
+                disabled
+              >
+                Enter your text
+              </button>
+            </form>
+          </div>
         </div>
-        <div class="mobile-footer">
-           <!-- <input class="footer-calender" type="calender" /> -->
-           
-            <button class="settings settings-1">
-                <svg class="settings-icon">
-                    <use xlink:href="icons/sprite.svg#icon-calendar"></use>
-                </svg>
-            </button> 
-            <button class="settings settings-2">
-                <svg class="settings-icon">
-                    <use xlink:href="icons/sprite.svg#icon-cog"></use>
-                </svg>
-            </button> 
-            <button class="settings settings-3">
-                <svg class="settings-icon settings-icon-user">
-                    <use xlink:href="icons/sprite.svg#icon-user"></use>
-                </svg>
-            </button> 
-            <button class="settings settings-4">
-                <svg class="settings-icon">
-                    <use xlink:href="icons/sprite.svg#icon-plus"></use>
-                </svg>
-            </button>
-            <button class="settings settings-5">
-                <svg class="settings-icon">
-                    <use xlink:href="icons/sprite.svg#icon-menu"></use>
-                </svg>
-            </button>
-        </div>
+        <div class="div-3 div"></div>
+      </div>
+      <div class="mobile-footer">
+        <!-- <input class="footer-calender" type="calender" /> -->
+
+        <button
+          class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal settings settings-1 dot"
+        >
+          <svg class="settings-icon">
+            <use xlink:href="icons/sprite.svg#icon-calendar"></use>
+          </svg>
+        </button>
+        <button
+          class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal settings settings-2 dot"
+        >
+          <svg class="settings-icon">
+            <use xlink:href="icons/sprite.svg#icon-cog"></use>
+          </svg>
+        </button>
+        <button
+          onclick="currentSlide(1)"
+          class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal settings settings-3"
+        >
+          <svg class="settings-icon settings-icon-user">
+            <use xlink:href="icons/sprite.svg#icon-user"></use>
+          </svg>
+        </button>
+        <button
+          onclick="currentSlide(2)"
+          class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal settings settings-4"
+        >
+          <svg class="settings-icon">
+            <use xlink:href="icons/sprite.svg#icon-plus"></use>
+          </svg>
+        </button>
+        <button
+          class="btn btn-lg btn-raised btn-wave btn-icon btn-rounded mb-2 teal settings settings-5"
+        >
+          <svg class="settings-icon">
+            <use xlink:href="icons/sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
     </div>
-    <script src="../JS/up.js">
-
-    </script>
-</body>
-
+    <script src="../JS/up.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
 <!--
     <div class="mobile-body">

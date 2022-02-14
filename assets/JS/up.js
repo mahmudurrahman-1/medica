@@ -1,121 +1,113 @@
-const button_3 = document.querySelector(".settings-3");
-const mobileBody =document.querySelector(".mobile-body");
-const button_4 = document.querySelector(".settings-4");
+const mobileHeader = document.querySelector(".mobile-header");
+
+const userFunc = function () {
+  const User = localStorage.getItem("myInfo");
+  const UserJs = JSON.parse(User);
+  mobileHeader.innerHTML = "";
+
+  const html = `
+   <p class="h1">${UserJs[0].Name}</p>
+    <button class="mobile__top-button">...</button>
+  `;
+  mobileHeader.insertAdjacentHTML("beforeend", html);
+};
+
+window.addEventListener("load", userFunc());
+
+const bodyform = document.querySelector(".body-form");
+bodyform.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+const mobileBody = document.querySelector(".div-3");
 const button_5 = document.querySelector(".settings-5");
-const submitText=document.querySelector(".body-form"); 
 
+const valueSubmit = document.getElementById("output-button");
+const valueTitle = document.querySelector(".body-input-title");
+const valueDescription = document.querySelector(".body-input");
 
-
-const displayBodyThree = function () {
-    mobileBody.innerHTML = '';
-  
-      const html = `
-      <p class="body-paragraph-2 ">Lorem ipsum Dolor</p>
-
-      <div class="mobile-body-briefCase">
-          <svg class="body-briefCase">
-              <use xlink:href="icons/sprite.svg#icon-aid-kit"></use>
-          </svg>
-      </div>
-      <button class="body-button">Lorem</button>
-      <p class="body-paragraph-1">Lorem ipsum dolor. deleniti quas distinctio!</p>
-      <p class="body-paragraph-2">lorem ipsum</p>
-      `;
-  
-      mobileBody.insertAdjacentHTML('afterbegin', html);
-  
+const todoData = [];
+const todoAPp = function () {
+  const date = new Date();
+  const optionsTime = {
+    minute: "numeric",
+    hour: "numeric",
   };
-  button_3.addEventListener('click',e=>{
-      e.preventDefault();
-      displayBodyThree();
-      console.log('clicked-3');
-  });
+  const optionsDate = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  const dateTimes = new Intl.DateTimeFormat("en-US", optionsTime).format(date);
+  const dateDate = new Intl.DateTimeFormat("en-US", optionsDate).format(date);
+  const dataText = {
+    name: valueTitle.value,
+    time: dateTimes,
+    date: dateDate,
+    description: valueDescription.value,
+  };
+  todoData.push(dataText);
+  console.log(todoData);
+  //   valueTitle.value = valueDescription = "";
+  //   valueDescription.blur();
+  localStorage.setItem("TodoData", JSON.stringify(todoData, "\t"));
+};
 
-  const inputs=[];
-  submitText.addEventListener('submit',event=>{
-      event.preventDefault();
-     const submitInput=new FormData(event.target);
-     const extractedValue= Object.fromEntries(submitInput.entries());
-     const date = new Date();
-    const optionsTime={
-        minute:'numeric',
-        hour:'numeric',
-    }
-    const optionsDate={
-        day:'numeric',
-        month:'long',
-        year:'numeric',
-    }
-    const dateTimes=new Intl.DateTimeFormat('en-US',optionsTime).format(date);
-    const dateDate=new Intl.DateTimeFormat('en-US',optionsDate).format(date);
-     const dataText = {
-         name:extractedValue.title,
-         time:dateTimes,
-         date: dateDate,
-         description:extractedValue.textinput
+/******Button -5 */
 
-     }
-     inputs.push(dataText);
-     
-     localStorage.setItem('textarea',JSON.stringify(inputs,'\t',2));
-  });
+const validEnter = (e) => {
+  if (valueTitle.value.length > 5 && valueDescription.value.length > 5) {
+    return (valueSubmit.disabled = false);
+  } else {
+    return (valueSubmit.disabled = true);
+  }
+};
 
-  const displayBodyFive = function () {
-      const getJson=localStorage.getItem('textarea');
-      const lists=JSON.parse(getJson);
-      localStorage.setItem('five','5');
+const displayBodyFive = function () {
+  const getJson = localStorage.getItem("TodoData");
+  const lists = JSON.parse(getJson);
 
-      mobileBody.innerHTML = '';
-    lists.map((div,i)=>{
+  mobileBody.innerHTML = "";
+  lists.map((div) => {
     const html = `
-    <p class="body-paragraph-list">${div.name}</p>
+   <div class="media">
+  <div class="h3 media-body mr-5">
+    <h5 class="h1 mt-0 mb-1">${div.time}</h5>
+   ${div.date}
+  </div>
 
-    <div class="body-time-text">
-        <div class="body-time">
-            <p class="body-time-clock">${div.time}</p>
-            <p class="body-time-date">${div.date}</p>
+ <div class="media-body">
+    <p class="h2 font-weight-bold text-break mt-0 mb-1">${div.description}</p>
+   <button class="btn btn-primary">edit</button>
 
-        </div>
-        <div class="body-text">
-            <p class="body-text-title">${div.description}</p>
-            <button class="body-text-edit">edit</button>
-        </div>
+  </div>
 
-    </div>
-   
+</div>
     `;
 
-    mobileBody.insertAdjacentHTML('afterbegin', html);
-
+    mobileBody.insertAdjacentHTML("afterbegin", html);
   });
-    
-  
-  };
-  button_5.addEventListener('click',e=>{
-    e.preventDefault();
-    displayBodyFive();
-    console.log('clicked-3');
+};
+button_5.addEventListener("click", (e) => {
+  currentSlide(3);
+  displayBodyFive();
 });
 
-const displayBodyFour = function () {
-    mobileBody.innerHTML = '';
-    localStorage.setItem('five','6');
+/**********************slider */
+/*make firstone visible */
+let number = 1;
+showSlides(number);
 
-  
-      const html = `
-      <div class="mobile-body-main">
-      <label for="textinput" class="body-input-Head">Enter your notes</label>
-       <form class="body-form">
-          <input name="title" type="text" class="body-input-title" placeholder="title here......." required />
-          <textarea name="textinput" type="text" class="body-input" placeholder="Write here......." required></textarea>
-         <button type="submit" id="output-button" class="body-button">Enter your text</button>
-       </form>
-       </div>
-      `;
-      mobileBody.insertAdjacentHTML('afterbegin', html);
-  };
-  button_4.addEventListener('click',e=>{
-      e.preventDefault();
-      displayBodyFour();
-      console.log('clicked-4');
-  });
+function currentSlide(n) {
+  number = n;
+  return showSlides(number);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("div");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    /* make all slides display none */
+  }
+  slides[n - 1].style.display = "block";
+  /*make the clicked one display */
+}
