@@ -76,8 +76,9 @@ const displayBodyFive = function () {
   </div>
 
  <div class="media-body">
-    <p class="h2 font-weight-bold text-break mt-0 mb-1">${div.description}</p>
-   <button class="btn btn-primary">edit</button>
+    <p class="h2 font-weight-bold text-break mt-0 mb-1">${div.name}</p>
+       <p class="h2 font-weight-normal text-break mt-0 mb-1">${div.description}</p>
+
 
   </div>
 
